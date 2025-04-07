@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# L001_TailwindMockup
 
-## Getting Started
+Selamat datang di repository **L001_TailwindMockup** 🎉  
+Ini adalah langkah pertama gue dalam perjalanan belajar desain UI menggunakan **Tailwind CSS**.
 
-First, run the development server:
+## 🔍 Tentang Repository Ini
+
+Repo ini berisi kumpulan mockup UI sederhana yang gue buat selama proses belajar **Tailwind CSS**.  
+Fokus utamanya adalah untuk:
+
+- Mengenal utility-first approach dari Tailwind
+- Eksplorasi layout, warna, spacing, dan komponen dasar
+- Latihan bikin desain yang clean dan responsive
+
+> Tujuan gue bukan cuma bisa pakai Tailwind, tapi juga bisa ngebentuk _design sense_ yang lebih baik sebagai developer.
+
+## 🚀 Tools yang Digunakan
+
+- [Tailwind CSS](https://tailwindcss.com) v3.4.1
+- HTML dasar
+- (Optional) Vite / Live Server (tergantung setup lokal)
+
+## 🛠 Cara Jalanin Proyek Ini
+
+Clone dulu reponya:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/username/L001_TailwindMockup.git
+cd L001_TailwindMockup
