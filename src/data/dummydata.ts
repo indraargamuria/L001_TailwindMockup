@@ -1,5 +1,5 @@
 export const cards = [
-    { title: "Card 1", description: "This is the first card" },
-    { title: "Card 2", description: "This is the second card" },
-    { title: "Card 3", description: "This is the third card" },
+    { title: "7 April 2025", description: "Senin" },
+    { title: "8 April 2025", description: "Selasa" },
+    { title: "9 April 2025", description: "Rabu" },
   ];
