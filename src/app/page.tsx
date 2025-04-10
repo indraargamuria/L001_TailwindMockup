@@ -17,8 +17,23 @@ async function getPokemonList() {
 
   const detailed = await Promise.all(
     data.results.map(async (pokemon: any) => {
-      const res = await fetch(pokemon.url);
-      return res.json();
+      const resDetail = await fetch(pokemon.url);
+      const detail = await resDetail.json();
+
+      const resSpecies = await fetch(detail.species.url);
+      const species = await resSpecies.json();
+
+      const flavorText = species.flavor_text_entries.find(
+        (entry: any) => entry.language.name === "en"
+      )?.flavor_text.replace(/\f/g, " ");
+
+      return {
+        id: detail.id,
+        name: detail.name,
+        image: detail.sprites.other["official-artwork"].front_default,
+        type: detail.types.map((t: any) => t.type.name).join(", "),
+        description: flavorText || "No description available.",
+      };
     })
   );
 
@@ -55,23 +70,27 @@ export default async function Home() {
           {pokemons.map((pokemon: any) => (
             <div
               key={pokemon.id}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 flex flex-col items-center transition-transform hover:scale-105"
+              className="bg-pink-100 dark:bg-pink-900 rounded-3xl shadow-md p-5 flex flex-col items-center text-center transition-transform hover:scale-105 hover:shadow-xl"
             >
               <Image
-                src={pokemon.sprites.other["official-artwork"].front_default}
+                src={pokemon.image}
                 alt={pokemon.name}
-                width={100}
-                height={100}
-                className="mb-2"
+                width={120}
+                height={120}
+                className="mb-4"
               />
-              <h2 className="capitalize text-xl font-semibold text-gray-800 dark:text-white">
+              <h2 className="capitalize text-2xl font-bold text-pink-700 dark:text-pink-200">
                 {pokemon.name}
               </h2>
-              <div className="mt-1 text-sm text-gray-500 dark:text-gray-300">
-                Type: {pokemon.types.map((t: any) => t.type.name).join(", ")}
-              </div>
+              <p className="text-sm mt-1 text-gray-700 dark:text-gray-300 italic">
+                Type: {pokemon.type}
+              </p>
+              <p className="text-xs mt-2 text-gray-600 dark:text-gray-400">
+                {pokemon.description}
+              </p>
             </div>
           ))}
+
 
         </div>
         <div></div>
