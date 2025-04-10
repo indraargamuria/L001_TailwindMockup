@@ -12,7 +12,7 @@ async function getUsers() {
 }
 
 async function getPokemonList() {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=9");
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
   const data = await res.json();
 
   const detailed = await Promise.all(
@@ -70,7 +70,7 @@ export default async function Home() {
           {pokemons.map((pokemon: any) => (
             <div
               key={pokemon.id}
-              className="bg-pink-100 dark:bg-pink-900 rounded-3xl shadow-md p-5 flex flex-col items-center text-center transition-transform hover:scale-105 hover:shadow-xl"
+              className="bg-pink-100  rounded-3xl shadow-md p-5 flex flex-col items-center text-center transition-transform hover:scale-105 hover:shadow-xl"
             >
               <Image
                 src={pokemon.image}
@@ -79,13 +79,13 @@ export default async function Home() {
                 height={120}
                 className="mb-4"
               />
-              <h2 className="capitalize text-2xl font-bold text-pink-700 dark:text-pink-200">
+              <h2 className="capitalize text-2xl font-bold text-pink-700">
                 {pokemon.name}
               </h2>
-              <p className="text-sm mt-1 text-gray-700 dark:text-gray-300 italic">
+              <p className="text-sm mt-1 text-gray-700 italic">
                 Type: {pokemon.type}
               </p>
-              <p className="text-xs mt-2 text-gray-600 dark:text-gray-400">
+              <p className="text-xs mt-2 text-gray-600">
                 {pokemon.description}
               </p>
             </div>
